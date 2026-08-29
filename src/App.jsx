@@ -1,20 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { AppProvider, useApp } from './context/AppContext';
 import { Navbar } from './components/Navbar';
 import { HeroHeader } from './components/HeroHeader';
 import { CourseCard } from './components/CourseCard';
-import { CourseDetailModal } from './components/CourseDetailModal';
 import { Timetable } from './components/Timetable';
-import { ResourceLibrary } from './components/ResourceLibrary';
-import { GradeCalculator } from './components/GradeCalculator';
-import { QuizModule } from './components/QuizModule';
-import { BookingModal } from './components/BookingModal';
 import { Announcements } from './components/Announcements';
 import { WipBanner } from './components/WipBanner';
 import { CookieBanner } from './components/CookieBanner';
-import { LegalModal } from './components/LegalModal';
 import { GraduationCap } from 'lucide-react';
 import './styles/components.css';
+
+// Code-Splitting Dinámico con React.lazy()
+const CourseDetailModal = lazy(() => import('./components/CourseDetailModal').then(m => ({ default: m.CourseDetailModal })));
+const ResourceLibrary = lazy(() => import('./components/ResourceLibrary').then(m => ({ default: m.ResourceLibrary })));
+const GradeCalculator = lazy(() => import('./components/GradeCalculator').then(m => ({ default: m.GradeCalculator })));
+const QuizModule = lazy(() => import('./components/QuizModule').then(m => ({ default: m.QuizModule })));
+const BookingModal = lazy(() => import('./components/BookingModal').then(m => ({ default: m.BookingModal })));
+const LegalModal = lazy(() => import('./components/LegalModal').then(m => ({ default: m.LegalModal })));
+const CommandPalette = lazy(() => import('./components/CommandPalette').then(m => ({ default: m.CommandPalette })));
+
+const SuspenseFallback = () => (
+  <div style={{ padding: '3rem 1rem', textAlign: 'center', color: 'var(--accent)', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.1rem', letterSpacing: '0.05em' }}>
+    CARGANDO MÓDULO...
+  </div>
+);
 
 const MainContent = () => {
   const { lang, activeTab, setActiveTab, courses } = useApp();
@@ -24,6 +33,47 @@ const MainContent = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [bookingDefaultCourse, setBookingDefaultCourse] = useState(null);
   const [legalTab, setLegalTab] = useState(null);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  // Global Keyboard Shortcuts (Power-User & Accessibility)
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      // Don't trigger shortcuts if user is typing in form inputs
+      const activeElement = document.activeElement;
+      const isInput = activeElement && (
+        activeElement.tagName === 'INPUT' || 
+        activeElement.tagName === 'TEXTAREA' || 
+        activeElement.tagName === 'SELECT' || 
+        activeElement.isContentEditable
+      );
+
+      // Ctrl + K or Cmd + K -> Open Command Palette
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setIsSearchOpen(prev => !prev);
+        return;
+      }
+
+      if (isInput) return;
+
+      // Number keys 1-6 for tab navigation
+      if (e.key === '1') setActiveTab('courses');
+      if (e.key === '2') setActiveTab('timetable');
+      if (e.key === '3') setActiveTab('resources');
+      if (e.key === '4') setActiveTab('calculator');
+      if (e.key === '5') setActiveTab('quizzes');
+      if (e.key === '6') setActiveTab('announcements');
+
+      // '?' key -> Open Command Palette
+      if (e.key === '?') {
+        e.preventDefault();
+        setIsSearchOpen(true);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [setActiveTab]);
 
   const handleOpenBooking = (cId = null) => {
     setBookingDefaultCourse(cId);
@@ -49,7 +99,10 @@ const MainContent = () => {
         {skipLinkText[lang] || skipLinkText['es']}
       </a>
 
-      <Navbar onOpenBooking={() => handleOpenBooking()} />
+      <Navbar 
+        onOpenBooking={() => handleOpenBooking()} 
+        onOpenSearch={() => setIsSearchOpen(true)}
+      />
 
       <main className="app-container" id="main-content" tabIndex="-1" style={{ flex: 1, outline: 'none' }}>
         <HeroHeader onOpenBooking={() => handleOpenBooking()} />
@@ -84,17 +137,23 @@ const MainContent = () => {
         )}
 
         {activeTab === 'resources' && (
-          <section className="animate-fade-in"><ResourceLibrary /></section>
+          <Suspense fallback={<SuspenseFallback />}>
+            <section className="animate-fade-in"><ResourceLibrary /></section>
+          </Suspense>
         )}
 
         {activeTab === 'calculator' && (
-          <section className="animate-fade-in">
-            <GradeCalculator initialCourse={courseForCalculator} />
-          </section>
+          <Suspense fallback={<SuspenseFallback />}>
+            <section className="animate-fade-in">
+              <GradeCalculator initialCourse={courseForCalculator} />
+            </section>
+          </Suspense>
         )}
 
         {activeTab === 'quizzes' && (
-          <section className="animate-fade-in"><QuizModule /></section>
+          <Suspense fallback={<SuspenseFallback />}>
+            <section className="animate-fade-in"><QuizModule /></section>
+          </Suspense>
         )}
 
         {activeTab === 'announcements' && (
@@ -102,27 +161,38 @@ const MainContent = () => {
         )}
       </main>
 
-      {selectedCourseForDetail && (
-        <CourseDetailModal 
-          course={selectedCourseForDetail} 
-          onClose={() => setSelectedCourseForDetail(null)} 
-          onOpenBooking={(cId) => handleOpenBooking(cId)}
-        />
-      )}
+      <Suspense fallback={null}>
+        {selectedCourseForDetail && (
+          <CourseDetailModal 
+            course={selectedCourseForDetail} 
+            onClose={() => setSelectedCourseForDetail(null)} 
+            onOpenBooking={(cId) => handleOpenBooking(cId)}
+          />
+        )}
 
-      {isBookingOpen && (
-        <BookingModal 
-          defaultCourseId={bookingDefaultCourse}
-          onClose={() => setIsBookingOpen(false)}
-        />
-      )}
+        {isBookingOpen && (
+          <BookingModal 
+            defaultCourseId={bookingDefaultCourse}
+            onClose={() => setIsBookingOpen(false)}
+          />
+        )}
 
-      {legalTab && (
-        <LegalModal 
-          initialTab={legalTab} 
-          onClose={() => setLegalTab(null)} 
-        />
-      )}
+        {legalTab && (
+          <LegalModal 
+            initialTab={legalTab} 
+            onClose={() => setLegalTab(null)} 
+          />
+        )}
+
+        {isSearchOpen && (
+          <CommandPalette 
+            isOpen={isSearchOpen}
+            onClose={() => setIsSearchOpen(false)}
+            onOpenBooking={() => handleOpenBooking()}
+            onOpenLegal={(tab) => setLegalTab(tab)}
+          />
+        )}
+      </Suspense>
 
       <CookieBanner onOpenLegal={() => setLegalTab('cookies')} />
 

@@ -7,10 +7,11 @@ import {
   Calculator, 
   BrainCircuit, 
   Bell, 
-  UserCheck
+  UserCheck,
+  Search
 } from 'lucide-react';
 
-export const Navbar = ({ onOpenBooking }) => {
+export const Navbar = ({ onOpenBooking, onOpenSearch }) => {
   const { lang, setLang, activeTab, setActiveTab } = useApp();
 
   const labels = {
@@ -64,6 +65,18 @@ export const Navbar = ({ onOpenBooking }) => {
         </nav>
 
         <div className="nav-controls">
+          <button 
+            onClick={onOpenSearch}
+            className="btn btn-secondary btn-icon"
+            aria-label="Buscar en la plataforma (Ctrl+K)"
+            title="Buscar (Ctrl + K)"
+            id="btn-search-header"
+            style={{ padding: '0.4rem 0.65rem', display: 'flex', alignItems: 'center', gap: '0.35rem', background: '#111111', border: '1px solid var(--border-strong)' }}
+          >
+            <Search size={15} color="var(--accent)" aria-hidden="true" />
+            <span style={{ fontSize: '0.75rem', fontFamily: 'var(--font-display)', fontWeight: 700, color: 'var(--gray-300)' }}>Ctrl+K</span>
+          </button>
+
           <button 
             onClick={onOpenBooking}
             className="btn btn-primary btn-sm"
