@@ -12,9 +12,9 @@ export const HeroHeader = ({ onOpenBooking }) => {
       en: "MIKEL — CI ESTELLA FACULTY PORTAL"
     },
     subtitle: {
-      es: "DEPARTAMENTO DE INFORMÁTICA Y COMUNICACIONES",
-      eu: "INFORMATIKA ETA KOMUNIKAZIOEN SAILA",
-      en: "DEPARTMENT OF IT & COMMUNICATIONS"
+      es: "DEPARTAMENTO DE INFORMÁTICA",
+      eu: "INFORMATIKA SAILA",
+      en: "DEPARTMENT OF INFORMATICS"
     },
     location: {
       es: "Aula L1 / Lab 2 · CI Politécnico Estella (Navarra)",

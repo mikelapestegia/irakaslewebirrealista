@@ -6,7 +6,7 @@
 ![Accesibilidad](https://img.shields.io/badge/WCAG-2.1_AA_Conformant-success?style=for-the-badge)
 ![Diseño](https://img.shields.io/badge/Estilo-Rockstar_GTA_V-red?style=for-the-badge)
 
-Plataforma web pedagógica e institucional desarrollada para el **Departamento de Informática y Comunicaciones** del **CI Politécnico Estella (Lizarra LHI)** para el curso académico **2026/2027**.
+Plataforma web pedagógica e institucional desarrollada para el **Departamento de Informática** del **CI Politécnico Estella (Lizarra LHI)** para el curso académico **2026/2027**.
 
 ---
 
