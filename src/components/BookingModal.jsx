@@ -127,7 +127,7 @@ export const BookingModal = ({ defaultCourseId, onClose }) => {
                 >
                   {courses.map(c => (
                     <option key={c.id} value={c.id}>
-                      {c.code} - {getLocalized(c.title)}
+                      {c.code} - {c.title[lang] || c.title['es']}
                     </option>
                   ))}
                 </select>

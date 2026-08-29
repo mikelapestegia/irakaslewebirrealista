@@ -7,13 +7,11 @@ import {
   Calculator, 
   BrainCircuit, 
   Bell, 
-  Sun, 
-  Moon,
   UserCheck
 } from 'lucide-react';
 
 export const Navbar = ({ onOpenBooking }) => {
-  const { theme, toggleTheme, lang, setLang, activeTab, setActiveTab } = useApp();
+  const { lang, setLang, activeTab, setActiveTab } = useApp();
 
   const labels = {
     courses: { es: "ASIGNATURAS", eu: "IRAKASGAIAK", en: "SUBJECTS" },
@@ -88,16 +86,6 @@ export const Navbar = ({ onOpenBooking }) => {
               </button>
             ))}
           </div>
-
-          <button 
-            onClick={toggleTheme}
-            className="btn btn-secondary btn-icon"
-            aria-label={theme === 'dark' ? 'Activar modo claro' : 'Activar modo oscuro'}
-            title={theme === 'dark' ? 'Modo claro' : 'Modo oscuro'}
-            id="btn-toggle-theme"
-          >
-            {theme === 'dark' ? <Sun size={16} aria-hidden="true" /> : <Moon size={16} aria-hidden="true" />}
-          </button>
         </div>
       </div>
     </header>
