@@ -1,0 +1,333 @@
+/* ─────────────────────────────────────────────
+   Mikel Laborategi — Rockstar-Inspired Design
+   Cinematic · Black · Condensed · Bold
+   ───────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-display: 'Barlow Condensed', 'Impact', sans-serif;
+  --font-body: 'Barlow', -apple-system, sans-serif;
+
+  --black: #000000;
+  --bg-deep: #0a0a0a;
+  --bg-surface: #111111;
+  --bg-card: #181818;
+  --bg-elevated: #222222;
+
+  --white: #ffffff;
+  --gray-100: #f0f0f0;
+  --gray-200: #dddddd;
+  --gray-300: #aaaaaa;
+  --gray-400: #888888;
+  --gray-500: #444444;
+  --gray-600: #333333;
+  --gray-700: #1a1a1a;
+
+  --accent: #f5c518;
+  --accent-hover: #e6b800;
+
+  --border: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.25);
+}
+
+[data-theme="light"] {
+  --black: #ffffff;
+  --bg-deep: #f5f5f5;
+  --bg-surface: #ebebeb;
+  --bg-card: #ffffff;
+  --bg-elevated: #f0f0f0;
+
+  --white: #0a0a0a;
+  --gray-100: #1a1a1a;
+  --gray-200: #333333;
+  --gray-300: #555555;
+  --gray-400: #777777;
+  --gray-500: #bbbbbb;
+  --gray-600: #dddddd;
+  --gray-700: #eeeeee;
+
+  --accent: #b89200;
+  --accent-hover: #9e7d00;
+
+  --border: rgba(0, 0, 0, 0.12);
+  --border-strong: rgba(0, 0, 0, 0.25);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Accessibility Utility Classes ── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 9999;
+  background: var(--accent);
+  color: #000000;
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid #000000;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+  outline: 3px solid var(--white);
+}
+
+/* ── Keyboard Focus Visible Ring (WCAG 2.4.7) ── */
+:focus-visible {
+  outline: 3px solid var(--accent) !important;
+  outline-offset: 3px !important;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--accent) !important;
+  outline-offset: 3px !important;
+}
+
+html {
+  font-family: var(--font-body);
+  font-size: 17.5px;
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--black);
+  background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.9) 600px, rgba(0, 0, 0, 0.95) 100%),
+    url('/images/bg_gta_cityscape.png');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.text-accent { color: var(--accent); }
+.gradient-text { color: var(--accent); -webkit-text-fill-color: var(--accent); display: inline; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--gray-500); }
+
+/* ── Buttons — Rockstar style: outlined, all-caps ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.6rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 2px solid var(--white);
+  background: transparent;
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+.btn-primary {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: transparent;
+}
+.btn-primary:hover {
+  background: var(--accent);
+  color: var(--black);
+}
+
+.btn-secondary {
+  border-color: var(--border-strong);
+  color: var(--gray-200);
+}
+.btn-secondary:hover {
+  border-color: var(--white);
+  color: var(--white);
+  background: transparent;
+}
+
+.btn-sm {
+  padding: 0.5rem 1.1rem;
+  font-size: 0.82rem;
+}
+
+.btn-icon {
+  width: 38px;
+  height: 38px;
+  padding: 0;
+}
+
+/* ── Badges ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.6rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 1px solid var(--border-strong);
+  color: var(--gray-200);
+}
+
+.badge-indigo { border-color: var(--accent); color: var(--accent); }
+.badge-emerald { border-color: #3fb950; color: #3fb950; }
+.badge-amber { border-color: var(--accent); color: var(--accent); }
+.badge-cyan { border-color: #58a6ff; color: #58a6ff; }
+.badge-rose { border-color: #f85149; color: #f85149; }
+
+/* ── Cards ── */
+.glass-panel,
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  transition: border-color 0.15s ease;
+}
+
+.glass-panel { padding: 1.5rem; }
+.glass-card { padding: 0; overflow: hidden; }
+.glass-card:hover { border-color: var(--border-strong); }
+
+/* ── Layout ── */
+.app-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+.grid-courses {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+@media (max-width: 900px) {
+  .grid-courses { grid-template-columns: 1fr; }
+}
+
+/* ── Animation ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s ease forwards;
+}
+
+/* ── Inputs ── */
+.input-field {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+.input-field:focus {
+  border-color: var(--accent);
+}
+
+/* ── Tabs — underline, all-caps ── */
+.tab-list {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  background: transparent;
+  padding: 0;
+}
+
+.tab-btn {
+  padding: 0.75rem 1.1rem;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--gray-400);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.tab-btn:hover { color: var(--white); }
+.tab-btn.active {
+  color: var(--white);
+  border-bottom-color: var(--accent);
+  background: transparent;
+  box-shadow: none;
+}
+
+/* ── Progress ── */
+.progress-bar-bg {
+  width: 100%;
+  height: 3px;
+  background: var(--gray-600);
+  overflow: hidden;
+  margin: 0.4rem 0 0;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.5s ease;
+}
