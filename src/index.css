@@ -29,6 +29,7 @@
 
   --border: rgba(255, 255, 255, 0.12);
   --border-strong: rgba(255, 255, 255, 0.25);
+  --text-tertiary: var(--gray-400);
 }
 
 [data-theme="light"] {
@@ -96,6 +97,7 @@
   --accent-hover: #059669;
   --border: rgba(16, 185, 129, 0.15);
   --border-strong: rgba(16, 185, 129, 0.3);
+  --text-tertiary: var(--gray-200);
 }
 
 [data-theme="minecraft"] {
@@ -825,4 +827,281 @@ h1, h2, h3, h4 {
     padding: 0.5rem !important;
   }
 }
+
+/* ==========================================
+   ENHANCED THE SIMS THEME DESIGN SYSTEM
+   ========================================== */
+
+/* 1. Floating Plumbob (Green Diamond) over avatar */
+[data-theme="sims"] .avatar-container {
+  position: relative;
+}
+[data-theme="sims"] .status-indicator {
+  position: absolute;
+  top: -24px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  bottom: auto !important;
+  right: auto !important;
+  width: 16px !important;
+  height: 24px !important;
+  background: #39cd3b !important;
+  border: none !important;
+  clip-path: polygon(50% 0%, 100% 35%, 100% 65%, 50% 100%, 0% 65%, 0% 35%) !important;
+  box-shadow: 0 4px 10px rgba(57, 205, 59, 0.6) !important;
+  animation: plumbob-float 2s ease-in-out infinite !important;
+}
+
+@keyframes plumbob-float {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0) rotateY(0deg);
+    background: #39cd3b;
+  }
+  50% {
+    transform: translateX(-50%) translateY(-6px) rotateY(180deg);
+    background: #10b981;
+  }
+}
+
+/* 2. Plumbob style brand logo icon */
+[data-theme="sims"] .brand-icon {
+  background: #10b981 !important;
+  color: #ffffff !important;
+  clip-path: polygon(50% 0%, 100% 30%, 100% 70%, 50% 100%, 0% 70%, 0% 30%) !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4) !important;
+}
+
+/* 3. Small plumbob indicator above the active tab in Navbar */
+[data-theme="sims"] .navbar .tab-btn.active {
+  position: relative;
+  background: rgba(16, 185, 129, 0.08) !important;
+  border-bottom: 3px solid #10b981 !important;
+}
+[data-theme="sims"] .navbar .tab-btn.active::after {
+  content: '' !important;
+  position: absolute !important;
+  top: -2px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 8px !important;
+  height: 12px !important;
+  background: #10b981 !important;
+  clip-path: polygon(50% 0%, 100% 30%, 100% 70%, 50% 100%, 0% 70%, 0% 30%) !important;
+}
+
+/* 4. Bright & clean style for stat-pills in Hero Header */
+[data-theme="sims"] .stat-pill {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(16, 185, 129, 0.3) !important;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.1) !important;
+}
+[data-theme="sims"] .stat-pill .stat-icon {
+  background: #e6f4ea !important;
+  color: #10b981 !important;
+}
+[data-theme="sims"] .stat-pill .stat-val {
+  color: #1a202c !important;
+}
+[data-theme="sims"] .stat-pill .stat-lbl {
+  color: #4a5568 !important;
+}
+
+/* 5. Custom styling for header search and theme switcher buttons to keep it light */
+[data-theme="sims"] #btn-search-header,
+[data-theme="sims"] #btn-theme-cycle {
+  background: #ffffff !important;
+  border: 1px solid rgba(16, 185, 129, 0.35) !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05) !important;
+}
+[data-theme="sims"] #btn-search-header span,
+[data-theme="sims"] #btn-theme-cycle span {
+  color: #1a202c !important;
+}
+[data-theme="sims"] #btn-search-header svg,
+[data-theme="sims"] #btn-theme-cycle svg {
+  color: #10b981 !important;
+}
+
+/* 6. Language Selector button overrides */
+[data-theme="sims"] .lang-btn {
+  background: #ffffff !important;
+  border: 1px solid rgba(16, 185, 129, 0.2) !important;
+  color: #4a5568 !important;
+}
+[data-theme="sims"] .lang-btn.active {
+  background: #10b981 !important;
+  color: #ffffff !important;
+  border-color: #10b981 !important;
+}
+
+/* 7. Card cover bottom overlay fades to light background instead of dark */
+[data-theme="sims"] .glass-card div[style*="linear-gradient"] {
+  background: linear-gradient(to bottom, transparent 20%, #ffffff 100%) !important;
+}
+
+/* 8. Global overrides for inline backgrounds in container divs, list items, and modal inner parts */
+[data-theme="sims"] [style*="background: #111111"],
+[data-theme="sims"] [style*="background:#111111"],
+[data-theme="sims"] [style*="background: rgb(17, 17, 17)"],
+[data-theme="sims"] [style*="background-color: #111111"],
+[data-theme="sims"] [style*="background-color:#111111"],
+[data-theme="sims"] [style*="background-color: rgb(17, 17, 17)"],
+[data-theme="sims"] [style*="background: #0d0d0d"],
+[data-theme="sims"] [style*="background:#0d0d0d"],
+[data-theme="sims"] [style*="background: rgb(13, 13, 13)"],
+[data-theme="sims"] [style*="background-color: #0d0d0d"],
+[data-theme="sims"] [style*="background-color:#0d0d0d"],
+[data-theme="sims"] [style*="background-color: rgb(13, 13, 13)"] {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  color: #1a202c !important;
+  border-color: rgba(16, 185, 129, 0.25) !important;
+}
+
+[data-theme="sims"] [style*="background: #000000"],
+[data-theme="sims"] [style*="background:#000000"],
+[data-theme="sims"] [style*="background: rgb(0, 0, 0)"],
+[data-theme="sims"] [style*="background-color: #000000"],
+[data-theme="sims"] [style*="background-color:#000000"],
+[data-theme="sims"] [style*="background-color: rgb(0, 0, 0)"] {
+  background-color: #e6f4ea !important;
+  background: #e6f4ea !important;
+  color: #115e59 !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+/* 9. Readability of text inside overridden blocks */
+[data-theme="sims"] .glass-card,
+[data-theme="sims"] .glass-panel,
+[data-theme="sims"] .modal-content,
+[data-theme="sims"] .accordion-item,
+[data-theme="sims"] .quiz-card {
+  color: #1a202c !important;
+}
+
+[data-theme="sims"] .glass-card *,
+[data-theme="sims"] .glass-panel *,
+[data-theme="sims"] .modal-content *,
+[data-theme="sims"] .accordion-item *,
+[data-theme="sims"] .quiz-card * {
+  /* Override absolute white text colors in elements when theme is active */
+  text-shadow: none !important;
+}
+
+[data-theme="sims"] .glass-card h1, [data-theme="sims"] .glass-card h2, [data-theme="sims"] .glass-card h3, [data-theme="sims"] .glass-card h4, [data-theme="sims"] .glass-card p,
+[data-theme="sims"] .glass-panel h1, [data-theme="sims"] .glass-panel h2, [data-theme="sims"] .glass-panel h3, [data-theme="sims"] .glass-panel h4, [data-theme="sims"] .glass-panel p,
+[data-theme="sims"] .modal-content h1, [data-theme="sims"] .modal-content h2, [data-theme="sims"] .modal-content h3, [data-theme="sims"] .modal-content h4, [data-theme="sims"] .modal-content p {
+  color: #1a202c !important;
+}
+
+[data-theme="sims"] .glass-card .text-accent,
+[data-theme="sims"] .glass-panel .text-accent,
+[data-theme="sims"] .modal-content .text-accent {
+  color: #059669 !important;
+}
+
+[data-theme="sims"] .glass-card span[style*="color"],
+[data-theme="sims"] .glass-panel span[style*="color"],
+[data-theme="sims"] .modal-content span[style*="color"] {
+  color: #2d3748 !important;
+}
+
+[data-theme="sims"] .glass-card svg,
+[data-theme="sims"] .glass-panel svg,
+[data-theme="sims"] .modal-content svg {
+  color: #10b981 !important;
+}
+
+[data-theme="sims"] .glass-card strong,
+[data-theme="sims"] .glass-panel strong,
+[data-theme="sims"] .modal-content strong {
+  color: #1a202c !important;
+}
+
+/* 10. Hero Banner contrast fixes for Sims theme */
+[data-theme="sims"] .hero-banner h1 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.85) !important;
+}
+[data-theme="sims"] .hero-banner .teacher-meta {
+  color: #10b981 !important; /* Bright green */
+}
+[data-theme="sims"] .hero-banner div[style*="color"],
+[data-theme="sims"] .hero-banner span[style*="color"],
+[data-theme="sims"] .hero-banner .teacher-info div,
+[data-theme="sims"] .hero-banner .teacher-info span {
+  color: #e2e8f0 !important; /* Off-white for labels and subtexts */
+}
+[data-theme="sims"] .hero-banner .teacher-info svg {
+  color: #10b981 !important;
+}
+[data-theme="sims"] .hero-banner .teacher-avatar {
+  background: #e6f4ea !important;
+  color: #10b981 !important;
+  border-color: #10b981 !important;
+}
+
+/* 11. Timetable contrast overrides for Sims theme */
+[data-theme="sims"] .time-slot-header {
+  background: #e6f4ea !important;
+  color: #1a202c !important;
+  border-bottom: 2px solid rgba(16, 185, 129, 0.3) !important;
+}
+[data-theme="sims"] .time-slot-cell {
+  background: #ffffff !important;
+  color: #1a202c !important;
+  border: 1px solid rgba(16, 185, 129, 0.15) !important;
+}
+[data-theme="sims"] .time-slot-cell.has-class {
+  background: #fdfaf2 !important; /* Soft warm yellow */
+  border-left: 3px solid #f5c518 !important;
+}
+[data-theme="sims"] .time-slot-cell.has-lab {
+  background: #f0f7ff !important; /* Soft blue */
+  border-left: 3px solid #58a6ff !important;
+}
+[data-theme="sims"] .time-slot-cell.has-office {
+  background: #e8f5e9 !important; /* Soft green */
+  border-left: 3px solid #3fb950 !important;
+}
+
+/* 12. Banner headers contrast overrides for Sims theme */
+[data-theme="sims"] .glass-panel div[style*="background"] h2,
+[data-theme="sims"] .glass-panel div[style*="background"] p,
+[data-theme="sims"] .glass-panel div[style*="background"] span {
+  color: #ffffff !important;
+}
+
+/* 13. Quiz Option buttons & Explanation panels overrides for Sims theme */
+[data-theme="sims"] .option-btn {
+  background: #ffffff !important;
+  color: #1a202c !important;
+  border-color: rgba(16, 185, 129, 0.25) !important;
+}
+[data-theme="sims"] .option-btn:hover {
+  background: #e6f4ea !important;
+  color: #059669 !important;
+  border-color: #10b981 !important;
+}
+[data-theme="sims"] .option-btn.selected-correct {
+  background: #e6f4ea !important;
+  color: #115e59 !important;
+  border-color: #10b981 !important;
+}
+[data-theme="sims"] .option-btn.selected-incorrect {
+  background: #fdf2f2 !important;
+  color: #9b1c1c !important;
+  border-color: #f85149 !important;
+}
+[data-theme="sims"] div[style*="background: #151206"],
+[data-theme="sims"] div[style*="background:#151206"] {
+  background-color: #fffbeb !important;
+  background: #fffbeb !important;
+  color: #1a202c !important;
+  border-color: #f5c518 !important;
+}
+
+
+
 
