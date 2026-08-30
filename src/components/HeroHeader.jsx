@@ -75,9 +75,9 @@ export const HeroHeader = ({ onOpenBooking }) => {
       en: "MIKEL LAB — ACADEMIC YEAR 2026-2027"
     },
     location: {
-      es: "Curso 2026-2027",
-      eu: "2026-2027 Ikasturtea",
-      en: "Academic Year 2026-2027"
+      es: "Navarra",
+      eu: "Nafarroa",
+      en: "Navarra"
     },
     statSubjects: { es: "MÓDULOS", eu: "MODULUAK", en: "MODULES" },
     statStudents: { es: "ALUMNADO", eu: "IKASLEAK", en: "STUDENTS" },
