@@ -2,7 +2,7 @@ export const initialCourses = [
   {
     id: "somo",
     code: "SOMO (0222)",
-    image: "/images/somo.png",
+    image: import.meta.env.BASE_URL + "images/somo.png",
     title: {
       es: "Sistemas Operativos Monopuesto",
       eu: "Sistema Eragile Monopostuak",
@@ -170,7 +170,7 @@ export const initialCourses = [
   {
     id: "sige",
     code: "SIGE (0488)",
-    image: "/images/sige.png",
+    image: import.meta.env.BASE_URL + "images/sige.png",
     title: {
       es: "Sistemas de Gestión Empresarial (ERP/CRM)",
       eu: "Enpresa-kudeaketako Sistemak (ERP/CRM)",
@@ -307,7 +307,7 @@ export const initialCourses = [
   {
     id: "digitalizacion",
     code: "DIGITAL (1709)",
-    image: "/images/digitalization.png",
+    image: import.meta.env.BASE_URL + "images/digitalization.png",
     title: {
       es: "Digitalización Aplicada a los Sectores Productivos",
       eu: "Sektore Produktiboetan Aplikatutako Digitalizazioa",

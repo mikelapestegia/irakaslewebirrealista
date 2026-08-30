@@ -49,7 +49,7 @@ export const QuizModule = () => {
         style={{
           position: 'relative',
           padding: '2.5rem 2rem',
-          backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 100%), url('/images/bg_navarra_${theme}_2.png')`,
+          backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 100%), url('${import.meta.env.BASE_URL}images/bg_navarra_${theme}_2.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           borderBottom: '1px solid var(--border-strong)',

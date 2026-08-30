@@ -96,7 +96,7 @@ export const HeroHeader = ({ onOpenBooking }) => {
   return (
     <div 
       className="hero-banner animate-fade-in"
-      style={{ backgroundImage: `url(/images/hero.png)` }}
+      style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/hero.png)` }}
     >
       <div className="hero-grid">
         <div className="teacher-info">
