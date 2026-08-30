@@ -1067,9 +1067,12 @@ h1, h2, h3, h4 {
 }
 
 /* 12. Banner headers contrast overrides for Sims theme */
-[data-theme="sims"] .glass-panel div[style*="background"] h2,
-[data-theme="sims"] .glass-panel div[style*="background"] p,
-[data-theme="sims"] .glass-panel div[style*="background"] span {
+[data-theme="sims"] .glass-panel div[style*="background-image"] h2,
+[data-theme="sims"] .glass-panel div[style*="background-image"] p,
+[data-theme="sims"] .glass-panel div[style*="background-image"] span,
+[data-theme="sims"] .glass-panel div[style*="backgroundImage"] h2,
+[data-theme="sims"] .glass-panel div[style*="backgroundImage"] p,
+[data-theme="sims"] .glass-panel div[style*="backgroundImage"] span {
   color: #ffffff !important;
 }
 
