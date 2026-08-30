@@ -3,9 +3,15 @@ import { useApp } from '../context/AppContext';
 import { FolderDown, Search, FileText, Code, FileArchive, Download } from 'lucide-react';
 
 export const ResourceLibrary = () => {
-  const { lang, courses, getLocalized } = useApp();
+  const { lang, courses, getLocalized, theme } = useApp();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCourseId, setSelectedCourseId] = useState('all');
+
+  // Clean raw filenames like SCRIPT_BIENVENIDA_Y_CONFIG → Script Bienvenida Y Config
+  const formatTitle = (raw) => raw
+    .replace(/\.[^.]+$/, '')          // strip extension
+    .replace(/_/g, ' ')               // underscores → spaces
+    .replace(/\b\w/g, c => c.toUpperCase()); // title-case
 
   const allResources = courses.flatMap(course => 
     course.resources.map(res => ({
@@ -33,12 +39,12 @@ export const ResourceLibrary = () => {
 
   return (
     <div className="glass-panel animate-fade-in" style={{ padding: '0', background: '#0d0d0d', border: '1px solid var(--border-strong)' }}>
-      {/* Banner Header with GTA Artwork Background */}
+      {/* Banner Header with Active Theme Artwork Background */}
       <div 
         style={{
           position: 'relative',
           padding: '2.5rem 2rem',
-          backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.7) 100%), url('/images/bg_gta_tech_lab.png')`,
+          backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.7) 100%), url('/images/bg_navarra_${theme}_3.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           borderBottom: '1px solid var(--border-strong)'
@@ -75,7 +81,7 @@ export const ResourceLibrary = () => {
             onChange={(e) => setSelectedCourseId(e.target.value)}
             id="select-course-filter"
           >
-            <option value="all">{lang === 'eu' ? 'TODAS LAS ASIGNATURAS' : 'TODAS LAS ASIGNATURAS'}</option>
+            <option value="all">{lang === 'eu' ? 'IRAKASGAI GUZTIAK' : lang === 'en' ? 'ALL SUBJECTS' : 'TODAS LAS ASIGNATURAS'}</option>
             {courses.map(c => (
               <option key={c.id} value={c.id}>
                 {c.code} - {getLocalized(c.title)}
@@ -102,8 +108,8 @@ export const ResourceLibrary = () => {
                 </div>
               </div>
 
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 800, marginBottom: '0.75rem', lineHeight: 1.2, letterSpacing: '0.02em' }}>
-                {res.title}
+              <h4 style={{ fontSize: '1rem', fontWeight: 800, marginBottom: '0.75rem', lineHeight: 1.25, letterSpacing: '0.02em', color: 'var(--white)', wordBreak: 'break-word' }}>
+                {formatTitle(res.title)}
               </h4>
 
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', color: 'var(--gray-400)', fontFamily: 'var(--font-display)', textTransform: 'uppercase', paddingTop: '0.75rem', borderTop: '1px solid var(--border)' }}>

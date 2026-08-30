@@ -52,7 +52,7 @@ export const LegalModal = ({ initialTab = 'terms', onClose }) => {
             </h2>
           </div>
           <p style={{ color: 'var(--gray-300)', fontSize: '0.85rem' }}>
-            {lang === 'eu' ? 'CI Politécnico Estella · Lizarra LHI Informatika Sailaren legezko ataria (2026/2027 ikasturtea)' : 'Portal de cumplimiento legal del Departamento de Informática del CI Politécnico Estella (Curso 2026/2027)'}
+            {lang === 'eu' ? 'Informatika Sailaren legezko ataria · 2026/2027 ikasturtea' : lang === 'en' ? 'Legal compliance portal · Academic Year 2026/2027' : 'Portal de cumplimiento legal del Departamento de Informática · Curso 2026/2027'}
           </p>
         </div>
 
@@ -93,7 +93,7 @@ export const LegalModal = ({ initialTab = 'terms', onClose }) => {
             <div className="animate-fade-in" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <h3 style={{ color: 'var(--white)', fontSize: '1.1rem', fontWeight: 800 }}>1. Datos Identificativos (LSSI-CE Ley 34/2002)</h3>
               <p>
-                En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se informa que la presente plataforma web es propiedad del <strong>Departamento de Informática del CI Politécnico Estella / Lizarra LHI</strong> (Gobierno de Navarra), con sede en Estella-Lizarra.
+                En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se informa que la presente plataforma web es propiedad del <strong>Departamento de Informática</strong> (Curso 2026-2027).
               </p>
               
               <h3 style={{ color: 'var(--white)', fontSize: '1.1rem', fontWeight: 800 }}>2. Finalidad Exclusivamente Educativa y Pedagógica</h3>
@@ -112,7 +112,7 @@ export const LegalModal = ({ initialTab = 'terms', onClose }) => {
             <div className="animate-fade-in" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <h3 style={{ color: 'var(--white)', fontSize: '1.1rem', fontWeight: 800 }}>1. Responsable del Tratamiento de Datos (RGPD UE 2016/679)</h3>
               <p>
-                El responsable del tratamiento de los datos recabados a través de las solicitudes de reserva de tutorías es el <strong>CI Politécnico Estella / Lizarra LHI (Departamento de Educación del Gobierno de Navarra)</strong>.
+                El responsable del tratamiento de los datos recabados a través de las solicitudes de reserva de tutorías es el <strong>Departamento de Informática · Curso 2026-2027</strong>.
               </p>
 
               <h3 style={{ color: 'var(--white)', fontSize: '1.1rem', fontWeight: 800 }}>2. Finalidad y Base Jurídica</h3>

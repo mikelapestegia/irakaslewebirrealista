@@ -11,19 +11,19 @@ export const WipBanner = ({ onOpenLegal }) => {
   const content = {
     es: {
       tag: "WORK IN PROGRESS · BETA 2026/2027",
-      text: "Portal docente en fase de desarrollo activo. La plataforma se encuentra en fase de pruebas para el CI Politécnico Estella.",
+      text: "Portal docente en fase de desarrollo activo. Plataforma en pruebas · Curso 2026/2027.",
       btnLegal: "Aviso Legal y Privacidad",
       close: "Cerrar aviso"
     },
     eu: {
       tag: "GARAPEN FASEAN · BETA 2026/2027",
-      text: "Atari irakaslea garapen aktiboko fasean. Plataforma proba-fasean dago Lizarra LHIrako.",
+      text: "Atari irakaslea garapen aktiboko fasean. Proba-fasean · 2026/2027 ikasturtea.",
       btnLegal: "Lege Oharra eta Pribatutasuna",
       close: "Itxi oharra"
     },
     en: {
       tag: "WORK IN PROGRESS · BETA 2026/2027",
-      text: "Teaching portal under active development. The platform is currently in testing mode for CI Politécnico Estella.",
+      text: "Teaching portal under active development. Currently in testing · Academic year 2026/2027.",
       btnLegal: "Legal & Privacy Notice",
       close: "Close banner"
     }

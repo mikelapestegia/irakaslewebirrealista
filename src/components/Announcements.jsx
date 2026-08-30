@@ -3,7 +3,7 @@ import { useApp } from '../context/AppContext';
 import { Search, Calendar } from 'lucide-react';
 
 export const Announcements = () => {
-  const { lang, announcements, courses, getLocalized } = useApp();
+  const { lang, announcements, courses, getLocalized, theme } = useApp();
   const [activeTag, setActiveTag] = useState('all');
   const [search, setSearch] = useState('');
 
@@ -32,12 +32,12 @@ export const Announcements = () => {
 
   return (
     <div className="glass-panel animate-fade-in" style={{ padding: '0', background: '#0d0d0d', border: '1px solid var(--border-strong)' }}>
-      {/* Banner Header with GTA Artwork */}
+      {/* Banner Header with Active Theme Artwork */}
       <div 
         style={{
           position: 'relative',
           padding: '2.5rem 2rem',
-          backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 100%), url('/images/bg_gta_cityscape.png')`,
+          backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 100%), url('/images/bg_navarra_${theme}_1.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           borderBottom: '1px solid var(--border-strong)'

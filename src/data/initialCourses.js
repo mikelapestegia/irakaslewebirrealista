@@ -18,11 +18,12 @@ export const initialCourses = [
     icon: "Cpu",
     color: "indigo",
     progress: 57,
+    hasDualSplit: true,
     teacher: "Mikel",
     schedule: {
-      es: "Lunes y Miércoles 08:30 - 10:30, Viernes 08:30 - 09:30 (Aula L1 / Lab 2 - CI Estella)",
-      eu: "Astelehen eta Asteazkenetan 08:30 - 10:30, Ostiraletan 08:30 - 09:30 (L1 Gela / 2. Lab - LHI Lizarra)",
-      en: "Mon & Wed 08:30 - 10:30, Fri 08:30 - 09:30 (Computer Lab L1 - CI Estella)"
+      es: "Lunes y Miércoles 08:30 - 10:30, Viernes 08:30 - 09:30",
+      eu: "Astelehen eta Asteazkenetan 08:30 - 10:30, Ostiraletan 08:30 - 09:30",
+      en: "Mon & Wed 08:30 - 10:30, Fri 08:30 - 09:30"
     },
     examDate: "2026-11-20",
     description: {
@@ -187,9 +188,9 @@ export const initialCourses = [
     progress: 60,
     teacher: "Departamento de Informática",
     schedule: {
-      es: "Tutorías presenciales los Jueves 10:25 - 12:15 (Lab 2 - CI Estella / Online)",
-      eu: "Aurrez aurreko tutoretzak Ostegunetan 10:25 - 12:15 (2. Lab - LHI Lizarra / Online)",
-      en: "Office hours Thursdays 10:25 - 12:15 (Lab 2 - CI Estella / Online)"
+      es: "Tutorías presenciales los Jueves 10:25 - 12:15 (Lab 2 · Curso 2026-2027)",
+      eu: "Aurrez aurreko tutoretzak Ostegunetan 10:25 - 12:15 (2. Lab · 2026-2027)",
+      en: "Office hours Thursdays 10:25 - 12:15 (Lab 2 · 2026-2027)"
     },
     examDate: "1ª Prueba: Ene 2026 | 2ª Prueba: May 2026",
     description: {
@@ -322,17 +323,18 @@ export const initialCourses = [
     icon: "Code2",
     color: "amber",
     progress: 85,
+    hasDualSplit: true,
     teacher: "Departamento de Informática",
     schedule: {
-      es: "Viernes 10:30 - 11:30 (Aula Multiusos / Lab 1 - CI Estella)",
-      eu: "Ostiraletan 10:30 - 11:30 (Erabilera Anitzeko Gela / 1. Lab - LHI Lizarra)",
-      en: "Fridays 10:30 - 11:30 (Multipurpose Lab - CI Estella)"
+      es: "Viernes 10:30 - 11:30 (Aula Multiusos / Lab 1 · Curso 2026-2027)",
+      eu: "Ostiraletan 10:30 - 11:30 (Erabilera Anitzeko Gela / 1. Lab · 2026-2027)",
+      en: "Fridays 10:30 - 11:30 (Multipurpose Lab · 2026-2027)"
     },
-    examDate: "Pruebas por UT: Oct, Nov, Ene, Feb, Mar y May 2026",
+    examDate: "Pruebas por UT: Oct, Nov, Ene, Feb, Mar y May 2027",
     description: {
-      es: "Programación oficial Ley Orgánica 3/2022 y Decreto Foral 119/2024: Estudio de Tecnologías Habilitadoras Digitales (THD) en entornos IT y OT, Cloud Computing (IaaS, PaaS, SaaS, Edge, Fog), Inteligencia Artificial y Machine Learning, Big Data, Ciberseguridad industrial y elaboración de un Proyecto de Transformación Digital para empresas de Navarra con Formación DUAL (100h).",
-      eu: "3/2022 Lege Organikoko eta 119/2024 Foru Dekretuko programazio ofiziala: Teknologia Gaitzaile Digitalen (THD) azterketa IT zein OT inguruneetan, Hodei-konputazioa (IaaS, PaaS, SaaS, Edge, Fog), Adimen Artifiziala eta Machine Learning, Big Data, zibersegurtasun industriala eta Transformazio Digitaleko Proiektua enpresan Formazio DUALarekin (100 ordu).",
-      en: "Official Syllabus LO 3/2022 & DF 119/2024: Enabling Digital Technologies (KETs) in IT/OT environments, Cloud Computing (IaaS, PaaS, SaaS, Edge), Artificial Intelligence, Big Data, Cybersecurity, and Enterprise Digital Transformation Project with DUAL Internship."
+      es: "Enfoque ultra-práctico 2026/2027 'Proyecto Landaben 4.0': Creación de un Gemelo Digital y Mantenimiento Predictivo con IA. Tecnologías Habilitadoras Digitales (THD) aplicadas a la industria de Navarra: IoT con Node-RED/MQTT, contenedores Docker, dashboards en Grafana Cloud, informes automáticos de averías con APIs de IA y auditoría de ciberseguridad industrial.",
+      eu: "2026/2027 ikuspegi ultra-praktikoa 'Landaben 4.0 Proiektua': Biki Digitala sortzea eta Mantentze Prediktiboa IA bidez. Teknologia Gaitzaile Digitalak (THD) Nafarroako industrian aplikatuta: IoT Node-RED/MQTT bidez, Docker ontziak, Grafana Cloud panelak, matxura-txostenak IA bidez eta zibersegurtasun industrialaren auditoria.",
+      en: "Ultra-practical 2026/2027 approach 'Project Landaben 4.0': Digital Twin creation & Predictive Maintenance with AI. Enabling Digital Technologies (KETs) applied to Navarre's industry: IoT with Node-RED/MQTT, Docker containers, Grafana Cloud, automated AI maintenance reports, and cybersecurity auditing."
     },
     ras: [
       { code: "RA1", weight: 15, name: { es: "Analiza el concepto de digitalización y su repercusión identificando entornos IT y OT", eu: "Digitalizazioaren kontzeptua eta enpresa-eragina aztertzen ditu, IT eta OT inguruneak bereiziz", en: "Analyzes digital transformation and IT/OT environment impacts" } },
@@ -343,9 +345,9 @@ export const initialCourses = [
       { code: "RA6", weight: 20, name: { es: "Desarrolla un proyecto de transformación digital de una empresa del sector informático", eu: "Informatika-sektoreko enpresa baten Transformazio Digitalerako Proiektua garatzen du", en: "Develops an enterprise Digital Transformation Project for IT companies" } }
     ],
     gradingCriteria: [
-      { name: { es: "Evaluación Continua - Tareas y Prácticas en Aula Virtual (Moodle)", eu: "Etengabeko Ebaluazioa - Online Zereginak eta Praktikak Gela Birtualean (Moodle)", en: "Continuous Eval - Online Tasks & Exercises on Moodle" }, weight: 50 },
-      { name: { es: "Evaluación Continua - Exámenes Prácticos por UT y Proyecto de Transformación Digital (UT6)", eu: "Etengabeko Ebaluazioa - Azterketa Praktikoak UT bakoitzeko eta Transformazio Digitaleko Proiektua (UT6)", en: "Continuous Eval - Practical Exams per UT & Digital Transformation Project" }, weight: 50 },
-      { name: { es: "Formación DUAL en Empresa (100h en 1º curso): Ponderación sobre RAs en empresa", eu: "Enpresako DUAL Formazioa (100 ordu 1. mailan): Enpresan ebaluatutako RA-en pisua (% 10)", en: "DUAL Internship in Company (100h 1st Year): Company RAs weighting" }, weight: 10 }
+      { name: { es: "Retos Prácticos de Laboratorio (Proyecto Landaben 4.0)", eu: "Laborategiko Erronka Praktikoak (Landaben 4.0 Proiektua)", en: "Lab Practical Challenges (Project Landaben 4.0)" }, weight: 60 },
+      { name: { es: "Pruebas Prácticas Manos a la Obra (Controles por UT)", eu: "Trebezia Praktikoko Azterketak (UT bakoitzeko parzialak)", en: "Hands-on Practical Exams (UT Assessments)" }, weight: 30 },
+      { name: { es: "Participación Activa, Iniciativa y Uso Ético de la IA", eu: "Parte-hartze Aktiboa, Ekimena eta IAren Erabilera Etikoa", en: "Active Participation, Initiative & Ethical AI Use" }, weight: 10 }
     ],
     modules: [
       { 
@@ -353,15 +355,15 @@ export const initialCourses = [
         ut: "UT1",
         hours: 5,
         ra: "RA1 (15%)",
-        dates: "Examen: Octubre 2025",
+        dates: "Examen: Octubre 2026",
         title: { 
-          es: "UT1: Digitalización en los sistemas productivos (Entornos IT y OT)", 
-          eu: "UT1: Digitalizazioa Ekoizpen-sistematan (IT eta OT inguruneak)", 
-          en: "UT1: Digitalization in Productive Systems (IT & OT Environments)" 
+          es: "UT1: El Puente de Landaben — Convergencia IT/OT y Auditoría", 
+          eu: "UT1: Landabeneko Zubia — IT/OT Konbergentzia eta Auditoria", 
+          en: "UT1: The Landaben Bridge — IT/OT Convergence & Auditing" 
         }, 
         summary: {
-          es: "Cronología de las revoluciones industriales, Sistemas Ciberfísicos (CPS), diferencias y convergencia entre entornos IT (Information Technology) y OT (Operation Technology), eficiencia de costes y desarrollo sostenible.",
-          eu: "Industria-iraultzen kronologia, Sistema Ziberfisikoak (CPS), IT eta OT inguruneen arteko elkarteratzea, kostu-eraginkortasuna eta garapen jasangarria."
+          es: "Diferencias y zonas de seguridad entre IT y OT. Auditoría visual de una línea de ensamblaje en Landaben e identificación de PLCs, SCADAs, ERPs y buses de campo.",
+          eu: "IT eta OT arteko segurtasun-eremuak eta ezberdintasunak. Landabeneko mihiztadura-lerro baten auditoria bisuala, PLC, SCADA eta ERPak identifikatuz."
         },
         completed: true 
       },
@@ -370,15 +372,15 @@ export const initialCourses = [
         ut: "UT2",
         hours: 5,
         ra: "RA2 (20%)",
-        dates: "Examen: Noviembre 2025",
+        dates: "Examen: Noviembre 2026",
         title: { 
-          es: "UT2: Caracterización de Tecnologías Habilitadoras Digitales (THD)", 
-          eu: "UT2: Teknologia Gaitzaile Digitalak Ezaugarritzea (THD)", 
-          en: "UT2: Key Enabling Digital Technologies (KETs)" 
+          es: "UT2: El Latido de la Fábrica — IoT y Gemelo Digital con Node-RED", 
+          eu: "UT2: Fabrikaren Bihotz-taupada — IoT eta Biki Digitala Node-RED bidez", 
+          en: "UT2: The Factory Heartbeat — IoT & Digital Twin with Node-RED" 
         }, 
         summary: {
-          es: "IoT (Internet de las Cosas), redes 5G, Fibra Óptica, Blockchain/DLT, Robótica Colaborativa (Cobots), Gemelos Digitales (Digital Twins), Realidades Inmersivas (VR/AR) y Huella Digital.",
-          eu: "IoT, 5G sareak, Blockchain/DLT teknologia, Robotika Kolaboratiboa (Cobots), Biki Digitalak (Digital Twins) eta Errealitate Murgiltzaileak (VR/AR)."
+          es: "Protocolo MQTT, brokers, publicadores y suscriptores. Creación de un flujo en Node-RED que simula la temperatura y vibración de una prensa industrial.",
+          eu: "MQTT protokoloa, brokerrak, argitaratzaileak eta harpidedunak. Node-RED bidez prentsa industrial baten tenperatura eta bibrazioa simulatzen dituen fluxua sortzea."
         },
         completed: true 
       },
@@ -387,15 +389,15 @@ export const initialCourses = [
         ut: "UT3",
         hours: 5,
         ra: "RA3 (15%)",
-        dates: "Examen: Enero 2026",
+        dates: "Examen: Enero 2027",
         title: { 
-          es: "UT3: Computación en la nube (Cloud, Edge, Fog y Mist)", 
-          eu: "UT3: Hodei-konputazioa (Cloud, Edge, Fog eta Mist)", 
-          en: "UT3: Cloud Computing (IaaS, PaaS, SaaS, Edge, Fog, Mist)" 
+          es: "UT3: La Nube Industrial — Docker Compose, InfluxDB y Grafana", 
+          eu: "UT3: Hodei Industriala — Docker Compose, InfluxDB eta Grafana", 
+          en: "UT3: The Industrial Cloud — Docker Compose, InfluxDB & Grafana" 
         }, 
         summary: {
-          es: "Modelos de servicio Cloud: IaaS, PaaS y SaaS. Arquitecturas de Edge, Fog y Mist Computing para baja latencia. Interoperabilidad, trabajo cooperativo y protección de datos en sistemas conectados. (Módulo en DUAL).",
-          eu: "Hodei-zerbitzuen ereduak: IaaS, PaaS eta SaaS. Edge, Fog eta Mist arkitekturak latentzia baxurako, elkarreragingarritasuna eta datuen babesa (DUAL bidez taldetua)."
+          es: "Diferencias IaaS, PaaS, SaaS. Configuración de un entorno local/cloud con Docker Compose para almacenar telemetría en base de datos y diseñar dashboards interactivos.",
+          eu: "IaaS, PaaS eta SaaS zerbitzu-ereduak. Docker Compose bidez brokerra, datu-basea eta Grafana panela hedatzea, datuak denbora errealean erakusteko."
         },
         completed: true 
       },
@@ -404,15 +406,15 @@ export const initialCourses = [
         ut: "UT4",
         hours: 5,
         ra: "RA4 (15%)",
-        dates: "Examen: Febrero 2026",
+        dates: "Examen: Febrero 2027",
         title: { 
-          es: "UT4: Aplicación de la Inteligencia Artificial (IA) en la Empresa", 
-          eu: "UT4: Adimen Artifizialaren (IA) Aplikazioa Enpresan", 
-          en: "UT4: AI Applications & Ethics in Business" 
+          es: "UT4: El Oráculo de Tafalla — Mantenimiento Predictivo con IA y LLMs", 
+          eu: "UT4: Tafallako Orakulua — Mantentze Prediktiboa IA eta LLM bidez", 
+          en: "UT4: The Tafalla Oracle — Predictive Maintenance with AI & LLMs" 
         }, 
         summary: {
-          es: "Machine Learning, Deep Learning, IA Débil vs Fuerte, Minería de Datos, automatización de procesos, lenguajes de programación en IA (Python), regulación ética de la IA, derechos de autor y protección de datos.",
-          eu: "Machine/Deep Learning, IA Ahula vs Indartsua, Datu-meatzaritza, prozesuen automatizazioa Python bidez eta IAren erregulazio etikoa (EU AI Act)."
+          es: "Machine Learning y Large Language Models aplicados a la industria. Conexión de Node-RED con APIs de IA mediante Prompt Engineering para predecir averías.",
+          eu: "Machine Learning eta LLMak industrian aplikatuta. Node-RED eta IA APIen arteko integrazioa Prompt Engineering erabiliz, matxurak aurreikusteko txostenak egiteko."
         },
         completed: true 
       },
@@ -421,15 +423,15 @@ export const initialCourses = [
         ut: "UT5",
         hours: 5,
         ra: "RA5 (15%)",
-        dates: "Examen: Marzo 2026",
+        dates: "Examen: Marzo 2027",
         title: { 
-          es: "UT5: Big Data, Ingeniería de Datos y Ciberseguridad Global", 
-          eu: "UT5: Big Data, Datuen Ingeniaritza eta Zibersegurtasun Globala", 
-          en: "UT5: Big Data, Data Engineering & Global Cybersecurity" 
+          es: "UT5: Fábrica Acorazada — Ciberseguridad Industrial IT/OT y Big Data", 
+          eu: "UT5: Fabrika Gortetua — IT/OT Zibersegurtasun Industriala eta Big Data", 
+          en: "UT5: Armored Factory — IT/OT Industrial Cybersecurity & Big Data" 
         }, 
         summary: {
-          es: "Dato vs Información, ciclo de vida del dato, las 5 V del Big Data (Volumen, Velocidad, Variedad, Veracidad, Valor), ingeniería de datos, almacenamiento seguro en cloud y ciberseguridad industrial IT/OT.",
-          eu: "Datua vs Informazioa, Big Data 5V-ak, datuen bizi-zikloa, hodei-biltegiratze segurua eta IT/OT zibersegurtasun industriala."
+          es: "Securización del broker MQTT con TLS/Autenticación, configuración de Firewall (UFW). Procesamiento y análisis de grandes volúmenes de datos con Python (Pandas) para calcular el OEE.",
+          eu: "MQTT brokerra TLS/Autentikazio bidez babestea, UFW suebakiaren doikuntza. Datu-bolumen handien prozesamendua Python Pandas bidez OEE adierazlea kalkulatzeko."
         },
         completed: false 
       },
@@ -438,24 +440,26 @@ export const initialCourses = [
         ut: "UT6",
         hours: 5,
         ra: "RA6 (20%)",
-        dates: "Examen & Entrega: Mayo 2026",
+        dates: "Examen & Entrega: Mayo 2027",
         title: { 
-          es: "UT6: Memoria y Proyecto de Transformación Digital Empresarial", 
-          eu: "UT6: Enpresaren Transformazio Digitaleko Proiektua", 
-          en: "UT6: Enterprise Digital Transformation Roadmap & Project" 
+          es: "UT6: El Plan de Vuelo — Proyecto de Transformación Digital PYME", 
+          eu: "UT6: Hegaldi Plana — PYME-en Transformazio Digitalerako Proiektua", 
+          en: "UT6: The Flight Plan — SME Digital Transformation Project" 
         }, 
         summary: {
-          es: "Elaboración del Plan Estratégico de Transformación Digital para una PYME de Navarra: diagnóstico de brechas IT/OT, selección de THDs, integración de ERP/CRM/Cloud, gestión del talento humano y costes de oportunidad.",
-          eu: "Nafarroako PYME baten Transformazio Digitalerako Plan Estrategikoa garatzea: IT/OT arrakalen diagnostikoa, THD hautaketa eta ERP/Cloud integrazioa."
+          es: "Elaboración de una memoria estratégica para digitalizar una empresa de Navarra. Justificación de costes, selección de tecnologías habilitadoras (THD) e implantación de DUAL.",
+          eu: "Nafarroako enpresa bat digitalizatzeko memoria estrategikoa egitea. Kostuen justifikazioa, teknologia gaitzaileak (THD) eta DUAL ezarpena."
         },
         completed: false 
       }
     ],
     resources: [
-      { id: 'r11', title: "Guia_Programacion_Didactica_Digitalizacion_DF119_2024.pdf", type: "pdf", size: "2.8 MB", date: "2026-08-28" },
-      { id: 'r12', title: "Plantilla_Memoria_Proyecto_Transformacion_Digital_PYME.pdf", type: "pdf", size: "1.8 MB", date: "2026-08-22" },
-      { id: 'r13', title: "Presentacion_Cloud_Computing_IaaS_PaaS_SaaS_Edge.pdf", type: "pdf", size: "5.2 MB", date: "2026-08-18" },
-      { id: 'r14', title: "Guia_Etica_y_Regulacion_de_Inteligencia_Artificial_IA.pdf", type: "pdf", size: "3.1 MB", date: "2026-08-15" }
+      { id: 'r11', title: "docker-compose-landaben40.yml", type: "code", size: "2.5 KB", date: "2026-08-28" },
+      { id: 'r12', title: "node-red-flow-gemelo-digital-mqtt.json", type: "code", size: "14 KB", date: "2026-08-25" },
+      { id: 'r13', title: "prompt-template-predictive-maintenance.txt", type: "code", size: "1.2 KB", date: "2026-08-22" },
+      { id: 'r14', title: "guia-ciberseguridad-industrial-ot.pdf", type: "pdf", size: "3.4 MB", date: "2026-08-20" },
+      { id: 'r15', title: "plantilla-proyecto-transformacion-pyme.docx", type: "pdf", size: "2.1 MB", date: "2026-08-18" },
+      { id: 'r16', title: "ejemplo-analisis-oee-pandas.ipynb", type: "code", size: "185 KB", date: "2026-08-15" }
     ]
   }
 ];

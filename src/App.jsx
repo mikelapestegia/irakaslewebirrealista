@@ -5,8 +5,6 @@ import { HeroHeader } from './components/HeroHeader';
 import { CourseCard } from './components/CourseCard';
 import { Timetable } from './components/Timetable';
 import { Announcements } from './components/Announcements';
-import { WipBanner } from './components/WipBanner';
-import { CookieBanner } from './components/CookieBanner';
 import { GraduationCap } from 'lucide-react';
 import './styles/components.css';
 
@@ -75,6 +73,11 @@ const MainContent = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [setActiveTab]);
 
+  // Scroll to top on every tab change for clean UX
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [activeTab]);
+
   const handleOpenBooking = (cId = null) => {
     setBookingDefaultCourse(cId);
     setIsBookingOpen(true);
@@ -93,7 +96,7 @@ const MainContent = () => {
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <WipBanner onOpenLegal={() => setLegalTab('terms')} />
+
 
       <a href="#main-content" className="skip-link">
         {skipLinkText[lang] || skipLinkText['es']}
@@ -194,8 +197,6 @@ const MainContent = () => {
         )}
       </Suspense>
 
-      <CookieBanner onOpenLegal={() => setLegalTab('cookies')} />
-
       {/* Footer */}
       <footer style={{ borderTop: '1px solid var(--border)', padding: '1.5rem 1.25rem', background: '#080808' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
@@ -219,7 +220,7 @@ const MainContent = () => {
           </div>
 
           <div style={{ fontSize: '0.75rem', color: 'var(--gray-400)' }}>
-            {lang === 'eu' ? 'CI Politécnico Estella · Lizarra LHI · Informatika Saila' : 'CI Politécnico Estella · Lizarra · Dpto. Informática'}
+            {lang === 'eu' ? '2026-2027 Ikasturtea · Informatika' : lang === 'en' ? 'Academic Year 2026-2027 · IT Dept.' : 'Curso 2026-2027 · Dpto. Informática'}
           </div>
         </div>
       </footer>

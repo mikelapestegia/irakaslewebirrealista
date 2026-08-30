@@ -3,7 +3,7 @@
    Cinematic · Black · Condensed · Bold
    ───────────────────────────────────────────── */
 
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600;700&family=VT323&family=Luckiest+Guy&family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
   --font-display: 'Barlow Condensed', 'Impact', sans-serif;
@@ -32,26 +32,114 @@
 }
 
 [data-theme="light"] {
-  --black: #ffffff;
-  --bg-deep: #f5f5f5;
-  --bg-surface: #ebebeb;
+  /* Fallback mapping to Sims variables */
+  --font-display: 'Barlow', -apple-system, sans-serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --black: #e8f5e9;
+  --bg-deep: #ffffff;
+  --bg-surface: #f1f3f5;
   --bg-card: #ffffff;
-  --bg-elevated: #f0f0f0;
+  --bg-elevated: #e9ecef;
+  --white: #1a202c;
+  --gray-100: #2d3748;
+  --gray-200: #4a5568;
+  --gray-300: #718096;
+  --gray-400: #a0aec0;
+  --gray-500: #cbd5e0;
+  --gray-600: #e2e8f0;
+  --gray-700: #edf2f7;
+  --accent: #10b981;
+  --accent-hover: #059669;
+  --border: rgba(16, 185, 129, 0.15);
+  --border-strong: rgba(16, 185, 129, 0.3);
+}
 
-  --white: #0a0a0a;
-  --gray-100: #1a1a1a;
-  --gray-200: #333333;
-  --gray-300: #555555;
-  --gray-400: #777777;
-  --gray-500: #bbbbbb;
-  --gray-600: #dddddd;
-  --gray-700: #eeeeee;
+[data-theme="gta"] {
+  --font-display: 'Barlow Condensed', 'Impact', sans-serif;
+  --font-body: 'Barlow', -apple-system, sans-serif;
+  --black: #000000;
+  --bg-deep: #0a0a0a;
+  --bg-surface: #111111;
+  --bg-card: #181818;
+  --bg-elevated: #222222;
+  --white: #ffffff;
+  --gray-100: #f0f0f0;
+  --gray-200: #dddddd;
+  --gray-300: #aaaaaa;
+  --gray-400: #888888;
+  --gray-500: #444444;
+  --gray-600: #333333;
+  --gray-700: #1a1a1a;
+  --accent: #f5c518;
+  --accent-hover: #e6b800;
+  --border: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.25);
+}
 
-  --accent: #b89200;
-  --accent-hover: #9e7d00;
+[data-theme="sims"] {
+  --font-display: 'Barlow', -apple-system, sans-serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --black: #e8f5e9;
+  --bg-deep: #ffffff;
+  --bg-surface: #f1f3f5;
+  --bg-card: #ffffff;
+  --bg-elevated: #e9ecef;
+  --white: #1a202c;
+  --gray-100: #2d3748;
+  --gray-200: #4a5568;
+  --gray-300: #718096;
+  --gray-400: #a0aec0;
+  --gray-500: #cbd5e0;
+  --gray-600: #e2e8f0;
+  --gray-700: #edf2f7;
+  --accent: #10b981;
+  --accent-hover: #059669;
+  --border: rgba(16, 185, 129, 0.15);
+  --border-strong: rgba(16, 185, 129, 0.3);
+}
 
-  --border: rgba(0, 0, 0, 0.12);
-  --border-strong: rgba(0, 0, 0, 0.25);
+[data-theme="minecraft"] {
+  --font-display: 'VT323', monospace;
+  --font-body: 'VT323', monospace;
+  --black: #140e0a;
+  --bg-deep: #211812;
+  --bg-surface: #302015;
+  --bg-card: #4a3b32;
+  --bg-elevated: #5a4a3f;
+  --white: #f0eedb;
+  --gray-100: #e2dfcd;
+  --gray-200: #d4cfb9;
+  --gray-300: #a59d84;
+  --gray-400: #827b66;
+  --gray-500: #5c5543;
+  --gray-600: #3c3527;
+  --gray-700: #252016;
+  --accent: #5c8e32;
+  --accent-hover: #7faa4a;
+  --border: #140e0a;
+  --border-strong: #000000;
+}
+
+[data-theme="fortnite"] {
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --black: #05020d;
+  --bg-deep: #0b051b;
+  --bg-surface: #14092b;
+  --bg-card: #1f0f42;
+  --bg-elevated: #291557;
+  --white: #ffffff;
+  --gray-100: #f3f0ff;
+  --gray-200: #d8d3f5;
+  --gray-300: #ab9fd6;
+  --gray-400: #7c6fa8;
+  --gray-500: #4f427d;
+  --gray-600: #2f2257;
+  --gray-700: #1b0f3b;
+  --accent: #00f0ff;
+  --accent-hover: #ff007f;
+  --border: rgba(0, 240, 255, 0.25);
+  --border-strong: rgba(255, 0, 127, 0.5);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -123,7 +211,7 @@ body {
   background-color: var(--black);
   background-image: 
     linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.9) 600px, rgba(0, 0, 0, 0.95) 100%),
-    url('/images/bg_gta_cityscape.png');
+    url('/images/bg_navarra_gta_1.png');
   background-attachment: fixed;
   background-size: cover;
   background-position: center top;
@@ -331,3 +419,410 @@ h1, h2, h3, h4 {
   background: var(--accent);
   transition: width 0.5s ease;
 }
+
+/* ─────────────────────────────────────────────
+   GAMIFIED THEMES STYLING OVERRIDES
+   ───────────────────────────────────────────── */
+
+/* --- GTA Theme --- */
+[data-theme="gta"] body {
+  background-color: var(--black);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center top;
+}
+[data-theme="gta"][data-bg-index="1"] body,
+[data-theme="gta"]:not([data-bg-index]) body {
+  background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.85) 500px, rgba(0, 0, 0, 0.95) 100%),
+    url('/images/bg_navarra_gta_1.png');
+}
+[data-theme="gta"][data-bg-index="2"] body {
+  background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.85) 500px, rgba(0, 0, 0, 0.95) 100%),
+    url('/images/bg_navarra_gta_2.png');
+}
+[data-theme="gta"][data-bg-index="3"] body {
+  background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.85) 500px, rgba(0, 0, 0, 0.95) 100%),
+    url('/images/bg_navarra_gta_3.png');
+}
+[data-theme="gta"][data-bg-index="4"] body {
+  background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.85) 500px, rgba(0, 0, 0, 0.95) 100%),
+    url('/images/bg_navarra_gta_4.png');
+}
+
+/* --- Sims Theme --- */
+[data-theme="sims"] body {
+  background-color: var(--black);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center top;
+}
+[data-theme="sims"][data-bg-index="1"] body,
+[data-theme="sims"]:not([data-bg-index]) body {
+  background-image: 
+    linear-gradient(to bottom, rgba(200, 235, 205, 0.35) 0%, rgba(235, 250, 238, 0.72) 400px, rgba(235, 250, 238, 0.90) 100%),
+    url('/images/bg_navarra_sims_1.png');
+}
+[data-theme="sims"][data-bg-index="2"] body {
+  background-image: 
+    linear-gradient(to bottom, rgba(200, 235, 205, 0.35) 0%, rgba(235, 250, 238, 0.72) 400px, rgba(235, 250, 238, 0.90) 100%),
+    url('/images/bg_navarra_sims_2.png');
+}
+[data-theme="sims"][data-bg-index="3"] body {
+  background-image: 
+    linear-gradient(to bottom, rgba(200, 235, 205, 0.35) 0%, rgba(235, 250, 238, 0.72) 400px, rgba(235, 250, 238, 0.90) 100%),
+    url('/images/bg_navarra_sims_3.png');
+}
+[data-theme="sims"][data-bg-index="4"] body {
+  background-image: 
+    linear-gradient(to bottom, rgba(200, 235, 205, 0.35) 0%, rgba(235, 250, 238, 0.72) 400px, rgba(235, 250, 238, 0.90) 100%),
+    url('/images/bg_navarra_sims_4.png');
+}
+[data-theme="sims"] .glass-panel,
+[data-theme="sims"] .glass-card {
+  border-radius: 12px;
+  border: 1px solid var(--accent);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.12);
+  color: #1a202c;
+}
+[data-theme="sims"] .glass-panel h1,
+[data-theme="sims"] .glass-panel h2,
+[data-theme="sims"] .glass-panel h3,
+[data-theme="sims"] .glass-panel h4,
+[data-theme="sims"] .glass-card h1,
+[data-theme="sims"] .glass-card h2,
+[data-theme="sims"] .glass-card h3,
+[data-theme="sims"] .glass-card h4 {
+  color: #1a202c !important;
+}
+[data-theme="sims"] .navbar {
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 2px solid var(--accent);
+  backdrop-filter: blur(8px);
+}
+[data-theme="sims"] .navbar .brand-logo,
+[data-theme="sims"] .navbar .tab-btn {
+  color: #1a202c;
+}
+[data-theme="sims"] .navbar .tab-btn:hover,
+[data-theme="sims"] .navbar .tab-btn.active {
+  color: var(--accent-hover);
+}
+[data-theme="sims"] footer {
+  background: rgba(232, 245, 233, 0.97) !important;
+  border-top: 2px solid var(--accent) !important;
+}
+[data-theme="sims"] footer button,
+[data-theme="sims"] footer span,
+[data-theme="sims"] footer div {
+  color: #2d3748 !important;
+}
+[data-theme="sims"] .wip-banner {
+  background: var(--accent);
+  color: #000;
+}
+[data-theme="sims"] .btn {
+  border-radius: 9999px;
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 600;
+  border-width: 1px;
+}
+[data-theme="sims"] .btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+[data-theme="sims"] .btn-primary:hover {
+  background: var(--accent-hover);
+  color: #ffffff;
+  border-color: var(--accent-hover);
+}
+[data-theme="sims"] .btn-secondary {
+  border-color: var(--gray-400);
+  color: #1a202c;
+  background: rgba(255,255,255,0.8);
+}
+[data-theme="sims"] .btn-secondary:hover {
+  background: var(--gray-600);
+  color: #fff;
+}
+[data-theme="sims"] .tab-btn {
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: normal;
+}
+[data-theme="sims"] .brand-logo {
+  font-weight: 800;
+}
+[data-theme="sims"] .input-field,
+[data-theme="sims"] select {
+  background: #ffffff;
+  color: #1a202c;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+[data-theme="sims"] .progress-bar-bg {
+  background: #d1fae5;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+[data-theme="sims"] .progress-bar-fill {
+  background: var(--accent);
+}
+
+
+/* --- Minecraft Theme --- */
+[data-theme="minecraft"] body {
+  background-color: var(--black);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center top;
+}
+[data-theme="minecraft"][data-bg-index="1"] body,
+[data-theme="minecraft"]:not([data-bg-index]) body {
+  background-image: 
+    linear-gradient(to bottom, rgba(33, 24, 18, 0.40) 0%, rgba(20, 14, 10, 0.78) 400px, rgba(20, 14, 10, 0.93) 100%),
+    url('/images/bg_navarra_minecraft_1.png');
+}
+[data-theme="minecraft"][data-bg-index="2"] body {
+  background-image: 
+    linear-gradient(to bottom, rgba(33, 24, 18, 0.40) 0%, rgba(20, 14, 10, 0.78) 400px, rgba(20, 14, 10, 0.93) 100%),
+    url('/images/bg_navarra_minecraft_2.png');
+}
+[data-theme="minecraft"][data-bg-index="3"] body {
+  background-image: 
+    linear-gradient(to bottom, rgba(33, 24, 18, 0.40) 0%, rgba(20, 14, 10, 0.78) 400px, rgba(20, 14, 10, 0.93) 100%),
+    url('/images/bg_navarra_minecraft_3.png');
+}
+[data-theme="minecraft"][data-bg-index="4"] body {
+  background-image: 
+    linear-gradient(to bottom, rgba(33, 24, 18, 0.40) 0%, rgba(20, 14, 10, 0.78) 400px, rgba(20, 14, 10, 0.93) 100%),
+    url('/images/bg_navarra_minecraft_4.png');
+}
+[data-theme="minecraft"] h1, 
+[data-theme="minecraft"] h2, 
+[data-theme="minecraft"] h3, 
+[data-theme="minecraft"] h4 {
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+[data-theme="minecraft"] .glass-panel,
+[data-theme="minecraft"] .glass-card,
+[data-theme="minecraft"] .input-field,
+[data-theme="minecraft"] select {
+  border: 4px solid #140e0a !important;
+  border-radius: 0px !important;
+  background: #4a3b32 !important;
+  box-shadow: inset -4px -4px #252016, inset 4px 4px #7a6a5f !important;
+}
+[data-theme="minecraft"] .btn {
+  border: 4px solid #140e0a !important;
+  border-radius: 0px !important;
+  background: #8b8b8b !important;
+  color: #ffffff !important;
+  box-shadow: inset -4px -4px #555555, inset 4px 4px #c2c2c2 !important;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+}
+[data-theme="minecraft"] .btn:hover {
+  background: #a1a1a1 !important;
+  color: #ffffff !important;
+  box-shadow: inset -4px -4px #666666, inset 4px 4px #d8d8d8 !important;
+}
+[data-theme="minecraft"] .btn-primary {
+  background: #5c8e32 !important;
+  box-shadow: inset -4px -4px #36571b, inset 4px 4px #85be53 !important;
+}
+[data-theme="minecraft"] .btn-primary:hover {
+  background: #7faa4a !important;
+}
+[data-theme="minecraft"] .tab-btn {
+  border-bottom: 4px solid transparent !important;
+}
+[data-theme="minecraft"] .tab-btn.active {
+  border-bottom: 4px solid var(--accent) !important;
+}
+[data-theme="minecraft"] .progress-bar-bg {
+  height: 8px;
+  background: #140e0a;
+  border: 2px solid #555555;
+}
+[data-theme="minecraft"] .progress-bar-fill {
+  background: #5c8e32;
+  box-shadow: inset -2px -2px #36571b, inset 2px 2px #85be53;
+}
+[data-theme="minecraft"] input[type="range"] {
+  accent-color: #5c8e32;
+}
+
+/* --- Fortnite Theme --- */
+[data-theme="fortnite"] body {
+  background-color: var(--black);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center top;
+}
+[data-theme="fortnite"][data-bg-index="1"] body,
+[data-theme="fortnite"]:not([data-bg-index]) body {
+  background-image: 
+    linear-gradient(to bottom, rgba(11, 5, 27, 0.65) 0%, rgba(5, 2, 13, 0.9) 500px, rgba(5, 2, 13, 0.96) 100%),
+    url('/images/bg_navarra_fortnite_1.png');
+}
+[data-theme="fortnite"][data-bg-index="2"] body {
+  background-image: 
+    linear-gradient(to bottom, rgba(11, 5, 27, 0.65) 0%, rgba(5, 2, 13, 0.9) 500px, rgba(5, 2, 13, 0.96) 100%),
+    url('/images/bg_navarra_fortnite_2.png');
+}
+[data-theme="fortnite"][data-bg-index="3"] body {
+  background-image: 
+    linear-gradient(to bottom, rgba(11, 5, 27, 0.65) 0%, rgba(5, 2, 13, 0.9) 500px, rgba(5, 2, 13, 0.96) 100%),
+    url('/images/bg_navarra_fortnite_3.png');
+}
+[data-theme="fortnite"][data-bg-index="4"] body {
+  background-image: 
+    linear-gradient(to bottom, rgba(11, 5, 27, 0.65) 0%, rgba(5, 2, 13, 0.9) 500px, rgba(5, 2, 13, 0.96) 100%),
+    url('/images/bg_navarra_fortnite_4.png');
+}
+[data-theme="fortnite"] h1, 
+[data-theme="fortnite"] h2, 
+[data-theme="fortnite"] h3, 
+[data-theme="fortnite"] h4 {
+  font-style: italic;
+  letter-spacing: 0.05em;
+}
+[data-theme="fortnite"] .glass-panel,
+[data-theme="fortnite"] .glass-card {
+  border-radius: 0px 16px 0px 16px;
+  border: 2px solid var(--accent);
+  background: linear-gradient(135deg, rgba(31, 15, 66, 0.95) 0%, rgba(20, 9, 43, 0.95) 100%);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
+}
+[data-theme="fortnite"] .btn {
+  border-radius: 0px;
+  transform: skewX(-8deg);
+  border: 2px solid var(--white);
+  background: linear-gradient(90deg, #ff007f 0%, #9b00ff 100%);
+  color: #ffffff;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  box-shadow: 3px 3px 0px var(--accent);
+  transition: all 0.15s ease;
+}
+[data-theme="fortnite"] .btn span,
+[data-theme="fortnite"] .btn svg {
+  transform: skewX(8deg);
+  display: inline-block;
+}
+[data-theme="fortnite"] .btn:hover {
+  transform: skewX(-8deg) translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--accent-hover);
+  background: linear-gradient(90deg, var(--accent) 0%, #00bcff 100%);
+  color: #000000;
+}
+[data-theme="fortnite"] .tab-btn {
+  transform: skewX(-10deg);
+  border-bottom: none !important;
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+[data-theme="fortnite"] .tab-btn span {
+  transform: skewX(10deg);
+}
+[data-theme="fortnite"] .tab-btn.active {
+  background: var(--accent) !important;
+  color: #000000 !important;
+}
+[data-theme="fortnite"] .progress-bar-bg {
+  height: 6px;
+  background: var(--bg-surface);
+  transform: skewX(-15deg);
+}
+[data-theme="fortnite"] .progress-bar-fill {
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-hover) 100%);
+}
+
+/* ── Responsive & Theme-specific Navbar Spacing Fixes ── */
+
+/* 1. Compensar la inclinación de botones en temas específicos para evitar colisiones */
+[data-theme="fortnite"] .navbar .btn,
+[data-theme="fortnite"] .navbar .lang-selector {
+  margin: 0 6px !important;
+}
+
+[data-theme="fortnite"] .navbar .tab-btn {
+  margin-right: 12px !important;
+}
+
+[data-theme="minecraft"] .navbar .btn {
+  margin: 0 4px !important;
+}
+
+[data-theme="minecraft"] .navbar .tab-btn {
+  margin-right: 6px !important;
+}
+
+/* 2. Reducir padding y tamaño en viewports medianos (1050px - 1320px) para acomodar euskera/inglés */
+@media (max-width: 1320px) {
+  .navbar {
+    padding: 0 0.75rem !important;
+  }
+  .navbar-content {
+    padding: 0 0.25rem !important;
+  }
+  .navbar .tab-btn {
+    padding: 0.5rem 0.6rem !important;
+    font-size: 0.8rem !important;
+    gap: 0.2rem !important;
+  }
+  .navbar .tab-btn svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .nav-controls {
+    gap: 0.4rem !important;
+  }
+  .brand-logo span {
+    font-size: 1.1rem !important;
+  }
+  .brand-icon {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* 3. Colapso limpio a solo iconos en tablets/pantallas pequeñas (<1080px) */
+@media (max-width: 1080px) {
+  .navbar .tab-btn span {
+    display: none !important; /* Esconder texto de pestañas para máxima limpieza */
+  }
+  .navbar .tab-btn {
+    padding: 0.5rem 0.9rem !important;
+  }
+  #btn-book-tutoring-header span {
+    display: none !important;
+  }
+  #btn-book-tutoring-header {
+    padding: 0.5rem !important;
+    min-width: auto !important;
+  }
+  #btn-theme-cycle span {
+    display: none !important;
+  }
+  #btn-theme-cycle {
+    min-width: auto !important;
+    padding: 0.5rem !important;
+  }
+  #btn-search-header span {
+    display: none !important;
+  }
+  #btn-search-header {
+    padding: 0.5rem !important;
+  }
+}
+

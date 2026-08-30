@@ -3,7 +3,7 @@ import { useApp } from '../context/AppContext';
 import { RotateCw, CheckCircle2, XCircle, HelpCircle } from 'lucide-react';
 
 export const QuizModule = () => {
-  const { lang, courses, quizzes, getLocalized } = useApp();
+  const { lang, courses, quizzes, getLocalized, theme } = useApp();
   const [selectedCourseId, setSelectedCourseId] = useState('somo');
   const [mode, setMode] = useState('mcq');
 
@@ -44,12 +44,12 @@ export const QuizModule = () => {
 
   return (
     <div className="glass-panel animate-fade-in" style={{ padding: '0', maxWidth: '850px', margin: '0 auto', background: '#0d0d0d', border: '1px solid var(--border-strong)' }}>
-      {/* Banner Header with GTA Artwork */}
+      {/* Banner Header with Active Theme Artwork */}
       <div 
         style={{
           position: 'relative',
           padding: '2.5rem 2rem',
-          backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 100%), url('/images/bg_gta_tech_lab.png')`,
+          backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 100%), url('/images/bg_navarra_${theme}_2.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           borderBottom: '1px solid var(--border-strong)',

@@ -34,6 +34,23 @@ export const initialAnnouncements = [
     }
   },
   {
+    id: "ann-dig-3",
+    courseId: "digitalizacion",
+    tag: "material",
+    tagLabel: { es: "Proyecto 4.0", eu: "4.0 Proiektua", en: "4.0 Project" },
+    date: "2026-08-30",
+    title: {
+      es: "🚀 Lanzamiento de 'Proyecto Landaben 4.0' y Sandbox IoT",
+      eu: "🚀 'Landaben 4.0 Proiektua' eta IoT Sandbox-aren Hasiera",
+      en: "🚀 'Project Landaben 4.0' & IoT Sandbox Launch"
+    },
+    content: {
+      es: "Damos inicio a la parte central de Digitalización: implementaremos el Gemelo Digital de una prensa de Volkswagen Navarra usando Node-RED, MQTT y Grafana. Ya tenéis disponible en el apartado de recursos el archivo docker-compose-landaben40.yml para desplegar la pila local de servidores.",
+      eu: "Digitalizazioko zati nagusiari hasiera emango diogu: Volkswagen Nafarroako prentsa baten Biki Digitala ezarriko dugu Node-RED, MQTT eta Grafana erabiliz. Eskuragarri duzue baliabideen atalean docker-compose-landaben40.yml fitxategia zerbitzari guztiak hedatzeko.",
+      en: "We are starting the main phase of Digitalization: building a Digital Twin of a Volkswagen Navarra industrial press using Node-RED, MQTT, and Grafana. The docker-compose-landaben40.yml stack file is now available under resources."
+    }
+  },
+  {
     id: "ann-sige-1",
     courseId: "sige",
     tag: "urgent",
@@ -62,9 +79,9 @@ export const initialAnnouncements = [
       en: "🗓️ In-Person & Online Office Hours: Thursdays 10:25 - 12:15"
     },
     content: {
-      es: "Las tutorías individuales se realizarán los jueves en el Lab 2 del CI Estella o vía videoconferencia Meet con el Departamento de Informática (concertar previa cita por la plataforma).",
-      eu: "Banakako tutoretzak ostegunetan egingo dira Lizarra LHIko 2. Laborategian edo Google Meet bidez Informatika Sailarekin (aldez aurretik hitzordua eskatuta).",
-      en: "Individual tutoring sessions take place Thursdays in Lab 2 at CI Estella or via Google Meet with the IT Department."
+      es: "Las tutorías individuales se realizarán los jueves en el Lab 2 o vía videoconferencia Meet con el Departamento de Informática (concertar previa cita por la plataforma).",
+      eu: "Banakako tutoretzak ostegunetan egingo dira 2. Laborategian edo Google Meet bidez Informatika Sailarekin (aldez aurretik hitzordua eskatuta).",
+      en: "Individual tutoring sessions take place Thursdays in Lab 2 or via Google Meet with the IT Department."
     }
   },
   {

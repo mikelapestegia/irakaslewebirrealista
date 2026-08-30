@@ -476,17 +476,50 @@ export const CourseDetailModal = ({ course, onClose, onOpenBooking }) => {
 
           {/* Tab 5: Evaluation Criteria */}
           {activeTab === 'evaluation' && (
-            <div style={{ background: '#111111', border: '1px solid var(--border-strong)', padding: '1.5rem' }}>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: 900, marginBottom: '1rem', color: 'var(--accent)', fontFamily: 'var(--font-display)' }}>
-                {lang === 'eu' ? 'EBALUAZIO IRIZPIDE OFIZIALAK ETA PONDERAZIOAK' : 'PONDERACIÓN OFICIAL DE CALIFICACIÓN'}
-              </h3>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-                {course.gradingCriteria.map((item, idx) => (
-                  <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.85rem 1.25rem', background: '#000000', border: '1px solid var(--border)' }}>
-                    <span style={{ fontWeight: 700, color: 'var(--white)', fontSize: '0.95rem' }}>{getLocalized(item.name)}</span>
-                    <span style={{ color: 'var(--accent)', fontWeight: 900, fontFamily: 'var(--font-display)', fontSize: '1.2rem' }}>{item.weight}%</span>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+              {course.hasDualSplit && (
+                <div style={{ background: '#0a0a0a', border: '1px solid var(--accent)', padding: '1.25rem', fontFamily: 'var(--font-display)' }}>
+                  <h4 style={{ fontSize: '1.1rem', fontWeight: 900, color: 'var(--accent)', marginBottom: '0.5rem', letterSpacing: '0.04em' }}>
+                    {lang === 'eu' ? 'LOM-LOE DUAL EBALUAZIO SISTEMA (%90 + %10)' : 'SISTEMA DE EVALUACIÓN LOMLOE DUAL (90% + 10%)'}
+                  </h4>
+                  <div style={{ fontSize: '0.9rem', color: 'var(--gray-300)', lineHeight: 1.5, margin: '0' }}>
+                    {lang === 'eu' ? (
+                      <>
+                        Módulo honen ebaluazioa bi zatitan banatzen da Nafarroako FP araudiaren arabera:
+                        <ul style={{ margin: '0.25rem 0 0.5rem 1.25rem', padding: '0' }}>
+                          <li><strong>Ikastetxearen nota (%90):</strong> Beheko taulan xehetutako ebaluazio irizpideen arabera.</li>
+                          <li><strong>Enpresaren nota (%10):</strong> DUAL egonaldiko tutorearen balorazioaren bidez (RA3).</li>
+                        </ul>
+                        Ikastetxeko zatia gainditu ezkero (nota &ge; 5.0), enpresako suspenditutako RAk soilik berreskuratu ahalko dira DUAL aldi amaieran edo egonaldia errepikatuz.
+                      </>
+                    ) : (
+                      <>
+                        La evaluación de este módulo se divide en dos bloques según la normativa DUAL de Navarra:
+                        <ul style={{ margin: '0.25rem 0 0.5rem 1.25rem', padding: '0' }}>
+                          <li><strong>Nota del Centro Educativo (90%):</strong> Evaluada según los criterios detallados abajo.</li>
+                          <li><strong>Nota de la Empresa / DUAL (10%):</strong> Evaluada por el tutor/a de empresa durante la estancia (asociado a RA3).</li>
+                        </ul>
+                        En caso de aprobar el centro (nota &ge; 5.0) pero suspender la empresa, se recuperarán únicamente los RAs de la empresa al final del periodo o repitiendo la estancia.
+                      </>
+                    )}
                   </div>
-                ))}
+                </div>
+              )}
+
+              <div style={{ background: '#111111', border: '1px solid var(--border-strong)', padding: '1.5rem' }}>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 900, marginBottom: '1rem', color: 'var(--accent)', fontFamily: 'var(--font-display)' }}>
+                  {course.hasDualSplit 
+                    ? (lang === 'eu' ? 'IKASTETXEKO NOTAREN PONDERAZIOAK' : 'CRITERIOS DE CALIFICACIÓN DEL CENTRO (90% DE LA NOTA)') 
+                    : (lang === 'eu' ? 'EBALUAZIO IRIZPIDE OFIZIALAK ETA PONDERAZIOAK' : 'PONDERACIÓN OFICIAL DE CALIFICACIÓN')}
+                </h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+                  {course.gradingCriteria.map((item, idx) => (
+                    <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.85rem 1.25rem', background: '#000000', border: '1px solid var(--border)' }}>
+                      <span style={{ fontWeight: 700, color: 'var(--white)', fontSize: '0.95rem' }}>{getLocalized(item.name)}</span>
+                      <span style={{ color: 'var(--accent)', fontWeight: 900, fontFamily: 'var(--font-display)', fontSize: '1.2rem' }}>{item.weight}%</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           )}

@@ -8,7 +8,11 @@ const AppContext = createContext();
 export const AppProvider = ({ children }) => {
   // Theme state
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('mikel_lab_theme') || 'dark';
+    const saved = localStorage.getItem('mikel_lab_theme') || 'gta';
+    // Mapear de forma segura temas anteriores
+    if (saved === 'dark') return 'gta';
+    if (saved === 'light') return 'sims';
+    return saved;
   });
 
   // Language state (default 'eu' Basque or 'es' Spanish)
@@ -37,11 +41,18 @@ export const AppProvider = ({ children }) => {
     ];
   });
 
-  // Apply theme to body document
+  // Background index (1-4) for rotating scenes in each theme
+  const [bgIndex, setBgIndex] = useState(() => {
+    const day = new Date().getDate();
+    return (day % 4) + 1;
+  });
+
+  // Apply theme and bgIndex to body document
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.setAttribute('data-bg-index', bgIndex.toString());
     localStorage.setItem('mikel_lab_theme', theme);
-  }, [theme]);
+  }, [theme, bgIndex]);
 
   useEffect(() => {
     document.documentElement.setAttribute('lang', lang);
@@ -53,7 +64,13 @@ export const AppProvider = ({ children }) => {
   }, [bookings]);
 
   const toggleTheme = () => {
-    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+    setTheme(prev => {
+      if (prev === 'gta' || prev === 'dark') return 'sims';
+      if (prev === 'sims') return 'minecraft';
+      if (prev === 'minecraft') return 'fortnite';
+      return 'gta';
+    });
+    setBgIndex(prevIdx => (prevIdx % 4) + 1);
   };
 
   const addBooking = (newBooking) => {

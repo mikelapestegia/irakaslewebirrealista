@@ -8,11 +8,12 @@ import {
   BrainCircuit, 
   Bell, 
   UserCheck,
-  Search
+  Search,
+  Gamepad2
 } from 'lucide-react';
 
 export const Navbar = ({ onOpenBooking, onOpenSearch }) => {
-  const { lang, setLang, activeTab, setActiveTab } = useApp();
+  const { lang, setLang, activeTab, setActiveTab, theme, toggleTheme } = useApp();
 
   const labels = {
     courses: { es: "ASIGNATURAS", eu: "IRAKASGAIAK", en: "SUBJECTS" },
@@ -84,6 +85,32 @@ export const Navbar = ({ onOpenBooking, onOpenSearch }) => {
           >
             <UserCheck size={15} aria-hidden="true" />
             <span>{labels.bookOffice[lang]}</span>
+          </button>
+
+          <button 
+            onClick={toggleTheme}
+            className="btn btn-secondary btn-icon"
+            style={{ 
+              padding: '0.4rem 0.65rem', 
+              display: 'flex', 
+              alignItems: 'center', 
+              justifyContent: 'center',
+              gap: '0.35rem', 
+              background: '#111111', 
+              border: '1px solid var(--border-strong)',
+              height: '38px',
+              minWidth: '95px',
+              fontFamily: 'var(--font-display)',
+              fontWeight: 800,
+              fontSize: '0.8rem',
+              color: 'var(--accent)'
+            }}
+            title={lang === 'eu' ? 'Aldatu estetika (GTA / Sims / Minecraft / Fortnite)' : 'Cambiar estética (GTA / Sims / Minecraft / Fortnite)'}
+            aria-label="Cambiar tema de juego"
+            id="btn-theme-cycle"
+          >
+            <Gamepad2 size={16} aria-hidden="true" />
+            <span style={{ color: 'var(--white)' }}>{theme === 'gta' ? 'GTA V' : theme === 'sims' ? 'SIMS' : theme === 'minecraft' ? 'MCRAFT' : 'FNITE'}</span>
           </button>
 
           <div className="lang-selector" role="group" aria-label="Selección de idioma / Hizkuntza aukeraketa">
